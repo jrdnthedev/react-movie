@@ -11,7 +11,7 @@ export function Card({ data }: { data: any }) {
                 <a href="#">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{data.title}</h5>
                 </a>
-                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{data.overview}</p>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">original title: {data.original_title}</p>
                 <a href="#" className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-gray-700 rounded-lg hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                     Read more
                     <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">

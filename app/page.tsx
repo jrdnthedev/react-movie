@@ -1,4 +1,5 @@
 import { Card } from "./components/card/card";
+import { Footer } from "./components/footer/footer";
 import { NavBar } from "./components/navbar/navbar";
 import { getRatedMovies } from "./lib/data";
 import { Movie } from "./lib/types";
@@ -19,6 +20,7 @@ export default async function Home() {
         ))}
       </div>
     </main>
+    <Footer />
    </>
   );
 }

@@ -1,5 +1,6 @@
-import Link from 'next/link';
+"use client";
 import { NavLinks } from '../navlinks/navlinks';
+import React from 'react';
 
 export function NavBar() {
     return (

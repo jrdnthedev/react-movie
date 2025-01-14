@@ -1,3 +1,4 @@
+"use client";
 import { NavLinks } from "../navlinks/navlinks";
 
 export function Footer() {

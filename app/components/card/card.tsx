@@ -1,3 +1,4 @@
+"use client";
 import { Media } from "@/app/lib/types";
 import { RatingBadge } from "../rating-badge/rating-badge"
 

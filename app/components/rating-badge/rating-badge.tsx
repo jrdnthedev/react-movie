@@ -1,3 +1,6 @@
+"use client";
+import React from 'react';
+
 export function RatingBadge ({rating}: {rating: number}) {
     const fixedRating = Math.round((rating + Number.EPSILON) * 100) / 100;
     return (

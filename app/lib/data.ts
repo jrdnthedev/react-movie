@@ -22,6 +22,34 @@ export async function getTopRatedMovies() {
   }
 }
 
+export async function getMovies() {
+  try {
+    const res = await fetch(
+      "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+      options
+    );
+    const data = await res.json();
+    return data.results;
+  } catch (err) {
+    console.error("fetching error: ", err);
+    throw new Error("Failed to fetch rated movies.");
+  }
+}
+
+export async function getShows() {
+  try {
+    const res = await fetch(
+      "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1",
+      options
+    );
+    const data = await res.json();
+    return data.results;
+  } catch (err) {
+    console.error("fetching error: ", err);
+    throw new Error("Failed to fetch rated shows.");
+  }
+}
+
 export async function getTopRatedShows() {
   try {
     const res = await fetch(

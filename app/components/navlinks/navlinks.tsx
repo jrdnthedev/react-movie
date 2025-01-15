@@ -4,7 +4,7 @@ import Link from "next/link";
 export function NavLinks () {
     return (
         <>
-        <li><Link href='/dashboard'>Dashboard</Link></li>
+        <li><Link href='/media'>Media</Link></li>
         </>
     )
 }

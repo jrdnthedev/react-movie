@@ -5,7 +5,7 @@ import { getMovies } from "@/app/lib/data";
 export default async function Movies({ searchParams }: { searchParams: { query?: string } }) {
     const  movies = await getMovies();
     const query = searchParams?.query || "";
-    const filteredMovies = await movies.filter((movie: any) => movie.title.toLowerCase().includes(query.toLowerCase()));
+    const filteredMovies = movies.filter((movie: any) => movie.title.toLowerCase().includes(query.toLowerCase()));
     
     return(
         <>

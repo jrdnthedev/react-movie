@@ -14,6 +14,11 @@ export async function getTopRatedMovies() {
       "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
       options
     );
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
+
     const data = await res.json();
     data.results.sort((a: Movie, b: Movie) => b.vote_average - a.vote_average);
     const topRatedMovies = data.results.slice(0, 4);
@@ -30,6 +35,11 @@ export async function getMovies() {
       "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
       options
     );
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
+
     const data = await res.json();
     return data.results;
   } catch (err) {
@@ -44,6 +54,11 @@ export async function getShows() {
       "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1",
       options
     );
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
+
     const data = await res.json();
     return data.results;
   } catch (err) {
@@ -58,6 +73,11 @@ export async function getTopRatedShows() {
       "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1",
       options
     );
+
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
+
     const data = await res.json();
     data.results.sort(
       (a: TvShow, b: TvShow) => b.vote_average - a.vote_average

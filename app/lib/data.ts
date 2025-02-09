@@ -1,3 +1,5 @@
+import { Movie, TvShow } from "./types";
+
 const options = {
   method: "GET",
   headers: {
@@ -13,7 +15,7 @@ export async function getTopRatedMovies() {
       options
     );
     const data = await res.json();
-    data.results.sort((a: any, b: any) => b.vote_average - a.vote_average);
+    data.results.sort((a: Movie, b: Movie) => b.vote_average - a.vote_average);
     const topRatedMovies = data.results.slice(0, 4);
     return topRatedMovies;
   } catch (err) {
@@ -57,7 +59,9 @@ export async function getTopRatedShows() {
       options
     );
     const data = await res.json();
-    data.results.sort((a: any, b: any) => b.vote_average - a.vote_average);
+    data.results.sort(
+      (a: TvShow, b: TvShow) => b.vote_average - a.vote_average
+    );
     const topRatedShows = data.results.slice(0, 4);
     return topRatedShows;
   } catch (err) {

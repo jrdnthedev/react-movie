@@ -36,30 +36,6 @@ export async function getTopRatedMovies() {
   return topRatedMovies.sort(
     (a: Movie, b: Movie) => b.vote_average - a.vote_average
   );
-
-  // try {
-  //   const res = await fetch(
-  //     "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
-  //     options
-  //   );
-
-  //   if (!res.ok) {
-  //     throw new Error(`HTTP error! Status: ${res.status} ${res.statusText}`);
-  //   }
-
-  //   const data = await res.json();
-  //   data.results.sort((a: Movie, b: Movie) => b.vote_average - a.vote_average);
-  //   const topRatedMovies = data.results.slice(0, 4);
-  //   return topRatedMovies;
-  // } catch (err) {
-  //   if (err instanceof TypeError) {
-  //     console.error("Network error: ", err);
-  //     throw new Error("Network issue, please try again.");
-  //   } else {
-  //     console.error("fetching error: ", err);
-  //     throw new Error("Failed to fetch rated movies.");
-  //   }
-  // }
 }
 
 export async function getMovies() {
@@ -67,28 +43,6 @@ export async function getMovies() {
     "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1"
   );
   return movies;
-
-  // try {
-  //   const res = await fetch(
-  //     "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
-  //     options
-  //   );
-
-  //   if (!res.ok) {
-  //     throw new Error(`HTTP error! Status: ${res.status} ${res.statusText}`);
-  //   }
-
-  //   const data = await res.json();
-  //   return data.results;
-  // } catch (err) {
-  //   if (err instanceof TypeError) {
-  //     console.error("Network error: ", err);
-  //     throw new Error("Network issue, please try again.");
-  //   } else {
-  //     console.error("fetching error: ", err);
-  //     throw new Error("Failed to fetch rated movies.");
-  //   }
-  // }
 }
 
 export async function getShows() {
@@ -96,28 +50,6 @@ export async function getShows() {
     "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1"
   );
   return shows;
-
-  // try {
-  //   const res = await fetch(
-  //     "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1",
-  //     options
-  //   );
-
-  //   if (!res.ok) {
-  //     throw new Error(`HTTP error! Status: ${res.status} ${res.statusText}`);
-  //   }
-
-  //   const data = await res.json();
-  //   return data.results;
-  // } catch (err) {
-  //   if (err instanceof TypeError) {
-  //     console.error("Network error: ", err);
-  //     throw new Error("Network issue, please try again.");
-  //   } else {
-  //     console.error("fetching error: ", err);
-  //     throw new Error("Failed to fetch rated shows.");
-  //   }
-  // }
 }
 
 export async function getTopRatedShows() {
@@ -127,30 +59,4 @@ export async function getTopRatedShows() {
   return topRatedShows.sort(
     (a: TvShow, b: TvShow) => b.vote_average - a.vote_average
   );
-
-  // try {
-  //   const res = await fetch(
-  //     "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1",
-  //     options
-  //   );
-
-  //   if (!res.ok) {
-  //     throw new Error(`HTTP error! Status: ${res.status} ${res.statusText}`);
-  //   }
-
-  //   const data = await res.json();
-  //   data.results.sort(
-  //     (a: TvShow, b: TvShow) => b.vote_average - a.vote_average
-  //   );
-  //   const topRatedShows = data.results.slice(0, 4);
-  //   return topRatedShows;
-  // } catch (err) {
-  //   if (err instanceof TypeError) {
-  //     console.error("Network error: ", err);
-  //     throw new Error("Network issue, please try again.");
-  //   } else {
-  //     console.error("fetching error: ", err);
-  //     throw new Error("Failed to fetch rated shows.");
-  //   }
-  // }
 }

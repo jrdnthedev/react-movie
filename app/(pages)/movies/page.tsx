@@ -4,11 +4,11 @@ import { getMovies } from "@/app/lib/data";
 import { Movie } from "@/app/lib/types";
 
 export default async function Movies({ searchParams }: { searchParams: { query?: string } }) {
-    const  movies = await getMovies();
+    const movies = await getMovies();
     const query = searchParams?.query || "";
     const filteredMovies = movies.filter((movie: Movie) => movie.title.toLowerCase().includes(query.toLowerCase()));
-    
-    return(
+
+    return (
         <>
             <SearchBar placeholder="Search for media" />
             <section className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">

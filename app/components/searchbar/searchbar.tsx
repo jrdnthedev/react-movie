@@ -17,7 +17,15 @@ export function SearchBar({ placeholder }: { placeholder: string }) {
         } else {
             params.delete('query');
         }
-        replace(`${pathname}?${params.toString()}`, { scroll: false });
+        let newPathname = pathname;
+        const queryString = params.toString();
+
+        // If the query string exists, append it to the pathname
+        if (queryString) {
+            newPathname = `${pathname}?${queryString}`;
+        }
+
+        replace(newPathname, { scroll: false });
     }, 350);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
